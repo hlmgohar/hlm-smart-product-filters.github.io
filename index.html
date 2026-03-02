@@ -441,6 +441,97 @@
     margin-top: 1px;
   }
 
+  /* ── QUICK LINK CARDS ── */
+  .qr-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .qr-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    text-decoration: none;
+    transition: all .2s;
+    box-shadow: var(--shadow-sm);
+  }
+  .qr-link:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md), 0 0 0 3px var(--accent-soft);
+    transform: translateY(-2px);
+  }
+  .qr-link-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .qr-link-icon.frontend {
+    background: #ecfdf5;
+    color: #10b981;
+  }
+  .qr-link-icon.admin {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .qr-link-body {
+    min-width: 0;
+  }
+  .qr-link-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 2px;
+    line-height: 1.35;
+  }
+  .qr-link-url {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+  }
+  .qr-link-badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 50px;
+    margin-top: 6px;
+  }
+  .qr-link-badge.frontend {
+    background: #ecfdf5;
+    color: #059669;
+  }
+  .qr-link-badge.admin {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .qr-links-heading {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 28px 0 4px;
+  }
+  .qr-links-heading:first-of-type {
+    margin-top: 0;
+  }
+
   /* ── FOOTER ── */
   .footer {
     text-align: center;
@@ -497,6 +588,7 @@
   <a href="#import-export">Import &amp; Export</a>
   <a href="#troubleshooting">Troubleshooting</a>
   <a href="#quick-reference">Quick Reference</a>
+  <a href="#quick-links">Quick Links</a>
 </nav>
 
 <!-- ── CONTENT ── -->
@@ -1047,6 +1139,81 @@
           <div class="qr-value">Load a Quick Start Template from the Filter Builder.</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ 12. QUICK LINKS ═══ -->
+  <section class="section" id="quick-links">
+    <h2><span class="section-num">12</span> Quick Links</h2>
+    <p class="section-desc">Jump directly to key pages on your store and admin dashboard.</p>
+
+    <p class="qr-links-heading">Frontend Pages</p>
+    <div class="qr-links-grid">
+      <a href="https://staging.iheartdogs.com/product-category/apparel/" target="_blank" class="qr-link">
+        <div class="qr-link-icon frontend">&#x1f3f7;</div>
+        <div class="qr-link-body">
+          <div class="qr-link-title">Product Category</div>
+          <div class="qr-link-url">/product-category/apparel/</div>
+          <span class="qr-link-badge frontend">Frontend</span>
+        </div>
+      </a>
+      <a href="https://staging.iheartdogs.com/product-tag/memorial-jewelry/" target="_blank" class="qr-link">
+        <div class="qr-link-icon frontend">&#x1f50d;</div>
+        <div class="qr-link-body">
+          <div class="qr-link-title">Product Tag</div>
+          <div class="qr-link-url">/product-tag/memorial-jewelry/</div>
+          <span class="qr-link-badge frontend">Frontend</span>
+        </div>
+      </a>
+      <a href="https://staging.iheartdogs.com/theme/winter-2023/" target="_blank" class="qr-link">
+        <div class="qr-link-icon frontend">&#x1f3a8;</div>
+        <div class="qr-link-body">
+          <div class="qr-link-title">Theme</div>
+          <div class="qr-link-url">/theme/winter-2023/</div>
+          <span class="qr-link-badge frontend">Frontend</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="qr-links-heading">Admin Pages</p>
+    <div class="qr-links-grid">
+      <a href="https://staging.iheartdogs.com/wp-admin/admin.php?page=theme-tag-assigner" target="_blank" class="qr-link">
+        <div class="qr-link-icon admin">&#x2699;</div>
+        <div class="qr-link-body">
+          <div class="qr-link-title">Tag Theme Assigner</div>
+          <div class="qr-link-url">wp-admin › theme-tag-assigner</div>
+          <span class="qr-link-badge admin">Admin</span>
+        </div>
+      </a>
+      <a href="https://staging.iheartdogs.com/wp-admin/admin.php?page=hlm-product-filters-builder" target="_blank" class="qr-link">
+        <div class="qr-link-icon admin">&#x1f6e0;</div>
+        <div class="qr-link-body">
+          <div class="qr-link-title">Filters Builder</div>
+          <div class="qr-link-url">wp-admin › hlm-product-filters-builder</div>
+          <span class="qr-link-badge admin">Admin</span>
+        </div>
+      </a>
+      <a href="https://staging.iheartdogs.com/wp-admin/admin.php?page=hlm-product-filters" target="_blank" class="qr-link">
+        <div class="qr-link-icon admin">&#x2699;</div>
+        <div class="qr-link-body">
+          <div class="qr-link-title">Filter Settings</div>
+          <div class="qr-link-url">wp-admin › hlm-product-filters</div>
+          <span class="qr-link-badge admin">Admin</span>
+        </div>
+      </a>
+      <a href="https://staging.iheartdogs.com/wp-admin/admin.php?page=hlm-product-filters-import-export" target="_blank" class="qr-link">
+        <div class="qr-link-icon admin">&#x1f4e6;</div>
+        <div class="qr-link-body">
+          <div class="qr-link-title">Import / Export Filters</div>
+          <div class="qr-link-url">wp-admin › hlm-product-filters-import-export</div>
+          <span class="qr-link-badge admin">Admin</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="callout callout-note" style="margin-top: 24px;">
+      <span class="callout-icon">&#x2139;&#xfe0f;</span>
+      <div>All links point to the <strong>staging environment</strong>. Make sure you are logged in to access admin pages.</div>
     </div>
   </section>
 
